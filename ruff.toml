@@ -34,6 +34,7 @@ lint.extend-select = [
     # See: https://docs.astral.sh/ruff/settings/#target-version
     # See: https://docs.astral.sh/ruff/rules/pyupgrade/
 
+    "F",   # Pyflakes – includes F401 (imported but unused), F403 (import *), F404 (unknown import)
     "E",   # Pycodestyle errors (style issues)
     "W",   # Pycodestyle warnings (style issues)
     "C90", # McCabe – complexity metric for functions
