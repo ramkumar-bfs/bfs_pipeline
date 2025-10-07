@@ -9,5 +9,12 @@
     "ruff.enable": true,
     // Keep imports tidy
     "ruff.organizeImports": true,
-
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/bfs_executor/src"
+    ],
+    "python.testing.pytestArgs": [
+        "bfs_executor"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
 }
