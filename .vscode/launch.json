@@ -5,22 +5,34 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(Windows): Current File",
+            "name": "Debug: Current File",
             "type": "debugpy",
             "request": "launch",
             "program": "${file}",
-            "console": "integratedTerminal",
-            "python": "${workspaceFolder}/.venv/Scripts/python.exe",
-            "envFile": "${workspaceFolder}/.env"
+            "envFile": "${workspaceFolder}/.env",
+            "windows": {
+                "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+                "console": "integratedTerminal",
+            },
+            "linux": {
+                "python": "${workspaceFolder}/.venv/bin/python",
+                "console": "integratedTerminal"
+            }
         },
         {
-            "name": "(Windows): Run A Module",
+            "name": "Debug: Run A Module",
             "type": "debugpy",
             "request": "launch",
             "module": "your_module_name", // Replace with your module, e.g. "mymodule"
-            "console": "integratedTerminal",
-            "python": "${workspaceFolder}/.venv/Scripts/python.exe",
-            "envFile": "${workspaceFolder}/.env"
-        }
+            "envFile": "${workspaceFolder}/.env",
+            "windows": {
+                "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+                "console": "integratedTerminal",
+            },
+            "linux": {
+                "python": "${workspaceFolder}/.venv/bin/python",
+                "console": "integratedTerminal"
+            }
+        },
     ]
 }
