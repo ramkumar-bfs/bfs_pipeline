@@ -1,0 +1,13 @@
+{
+    // Run lint + fix on save
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "explicit",
+        "source.organizeImports": "explicit"
+    },
+    "editor.formatOnSave": true,
+    // Ruff specific settings
+    "ruff.enable": true,
+    // Keep imports tidy
+    "ruff.organizeImports": true,
+
+}
