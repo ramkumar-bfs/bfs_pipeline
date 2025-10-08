@@ -27,6 +27,7 @@ exclude = [
     "venv",
 ]
 target-version = "py37"
+line-length = 100
 lint.extend-select = [
     # Production code quality: Python 3.7+
     # Enforce f-string usage and modern syntax
@@ -110,3 +111,46 @@ lint.ignore = [
     "TRY003",  # Tryceratops - Checks for long exception messages that are not defined in the exception class itself.
     "EM101",   # Flake8-errmsg - Checks for the use of string literals in exception constructors.
 ]
+
+# Opt-in to preview lint rules/behaviors
+lint.preview = true
+
+# Docstring style convention
+[lint.pydocstyle]
+convention = "google"
+
+# Import sorting preferences (isort via Ruff)
+[lint.isort]
+known-first-party = ["bfs_executor"] # Add your first-party module names here
+
+combine-as-imports = true
+force-sort-within-sections = true
+
+# Quote style enforcement
+[lint.flake8-quotes]
+inline-quotes = "double"
+multiline-quotes = "double"
+docstring-quotes = "double"
+avoid-escape = true
+
+# Cyclomatic complexity threshold (McCabe)
+[lint.mccabe]
+max-complexity = 10
+
+# Relax some rules in tests
+[lint.per-file-ignores]
+"bfs_executor/tests/**" = [
+    "S101", # Use of assert in tests
+    "D",    # Docstring rules in tests
+    "T20",  # Allow prints in tests
+]
+
+# Ruff formatter options (works in ruff.toml)
+[format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+skip-magic-trailing-comma = false
+docstring-code-format = true
+docstring-code-line-length = 100
+preview = true
