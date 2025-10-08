@@ -9,12 +9,17 @@
     "ruff.enable": true,
     // Keep imports tidy
     "ruff.organizeImports": true,
-    "python.analysis.extraPaths": [
-        "${workspaceFolder}/bfs_executor/src"
-    ],
-    "python.testing.pytestArgs": [
-        "bfs_executor"
-    ],
+    // "python.testing.pytestArgs": [
+    //     "bfs_executor"
+    // ],
     "python.testing.unittestEnabled": false,
-    "python.testing.pytestEnabled": true
+    "python.testing.pytestEnabled": true,
+    // Keep this; helps with local imports
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/*/src"
+    ],
+    // Use Pylance for navigation and semantic analysis
+    "python.analysis.typeCheckingMode": "basic", // or "off" if you want only mypy
+    "python.analysis.diagnosticMode": "workspace",
+    "python.analysis.autoImportCompletions": true
 }
